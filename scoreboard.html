@@ -58,8 +58,8 @@
       <th scope="col">rank</th>
       <th scope="col">name</th>
       <th scope="col">score</th>
-      <th scope="col">last score</th>
-      <th scope="col">completed</th>
+      <th scope="col" class="d-none d-sm-none d-md-none d-lg-table-cell">last score</th>
+      <th scope="col" class="d-none d-sm-none d-md-table-cell">completed</th>
     </tr>
   </thead>
   <tbody id="scoreboard">
@@ -128,12 +128,18 @@
 
     $.each( data.data, function( key, val ) {
       $.each( val, function( key, val ) {
-        items.push( "<td>" + val + "</td>" );
+        if(key=="LastScore") {
+          items.push( "<td class=\"d-none d-sm-none d-md-none d-lg-table-cell\">" + val + "</td>" );
+        } else if (key=="Completed") {
+          items.push( "<td class=\"d-none d-sm-none d-md-table-cell\">" + val + "</td>" );
+        } else {
+          items.push( "<td>" + val + "</td>" );
+        }
       });
     });
    
     $( "<tr/>", {
-      "class": "",
+      "class": "test",
       html: items.join( "" )
     }).appendTo( scoreboard );
   });
