@@ -62,8 +62,8 @@
       <th scope="col">completed</th>
     </tr>
   </thead>
-  <tbody>
-  
+  <tbody id="scoreboard">
+  <!--
     <tr>
       <th scope="row">0</th>
       <td>
@@ -79,7 +79,7 @@
         None
       </td>
     </tr>
-  
+  -->
     
   
   </tbody>
@@ -109,10 +109,8 @@
     var items = [];
     var stats = $("#event_stats")
     $.each( data.data, function( key, val ) {
-      console.log(key)
       items.push( "<li class=\"list-group-item\">" + key + ": " + val + "</li>" );
     });
-    console.log(items)
    
     $( "<ul/>", {
       "class": "list-group",
@@ -120,8 +118,29 @@
     }).appendTo( stats );
   });
     }
+
+
+    function updateScoreboard(){
+      $.getJSON( "https://snekwars.antihackerhackerclub.com/scoreboard/json", function( data ) {
+    var items = [];
+    var scoreboard = $("#scoreboard")
+
+
+    $.each( data.data, function( key, val ) {
+      $.each( val, function( key, val ) {
+        items.push( "<td>" + val + "</td>" );
+      });
+    });
+   
+    $( "<tr/>", {
+      "class": "",
+      html: items.join( "" )
+    }).appendTo( scoreboard );
+  });
+    }
   
     updateStats()
+    updateScoreboard()
   </script>
   </body>
 </html>
