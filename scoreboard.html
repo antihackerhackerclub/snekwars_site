@@ -1,69 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>scoreboard | SnekWars - 0xAHHC</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
-    
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
-    
-  </head>
-  <body>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>scoreboard | SnekWars - 0xAHHC</title>
 
-    <div class="navbar-dark text-white text-mono">
-      <div class="container">
-        <nav class="navbar px-0 navbar-expand-lg navbar-dark">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav align-items-center">
-              <a href="index.html" class="pl-md-0 p-3 text-light active"><img src="images/SnekWars.png" height="50px"></a>
-              <a href="instructions.html" class="p-3 text-decoration-none text-light">instructions</a>
-              <a href="scoreboard.html" class="p-3 text-decoration-none text-light">scoreboard</a>
-            </div>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+</head>
+
+<body>
+
+  <div class="navbar-dark text-white text-mono">
+    <div class="container">
+      <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav align-items-center">
+            <a href="index.html" class="pl-md-0 p-3 text-light active"><img src="images/SnekWars.png" height="50px"></a>
+            <a href="instructions.html" class="p-3 text-decoration-none text-light">instructions</a>
+            <a href="scoreboard.html" class="p-3 text-decoration-none text-light">scoreboard</a>
           </div>
-        </nav>
-  
-      </div>
+        </div>
+      </nav>
+
     </div>
+  </div>
 
 
-  
-<div class="container py-5 mb5 text-mono">
-  <h1 class="mb-5">scoreboar<span class="vim-caret">d</span></h1>
 
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card bg-primary text-white mb-3 text-center">
-        <div class="card-body">
-          <blockquote id="event_stats" class="card-blockquote">
+  <div class="container py-5 mb5 text-mono">
+    <h1 class="mb-5">scoreboar<span class="vim-caret">d</span></h1>
 
-          </blockquote>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card bg-primary text-white mb-3 text-center">
+          <div class="card-body">
+            <blockquote id="event_stats" class="card-blockquote">
+
+            </blockquote>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-9">
+      <div class="col-md-9">
 
-      <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">rank</th>
-      <th scope="col">name</th>
-      <th scope="col">score</th>
-      <th scope="col" class="d-none d-sm-none d-md-none d-lg-table-cell">last score</th>
-      <th scope="col" class="d-none d-sm-none d-md-table-cell">completed</th>
-    </tr>
-  </thead>
-  <tbody id="scoreboard">
-  <!--
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">rank</th>
+              <th scope="col">name</th>
+              <th scope="col">score</th>
+              <th scope="col" class="d-none d-sm-none d-md-none d-lg-table-cell">last score</th>
+              <th scope="col" class="d-none d-sm-none d-md-table-cell">completed</th>
+            </tr>
+          </thead>
+          <tbody id="scoreboard">
+            <!--
     <tr>
       <th scope="row">0</th>
       <td>
@@ -80,73 +84,78 @@
       </td>
     </tr>
   -->
-    
-  
-  </tbody>
-</table>
 
+
+          </tbody>
+        </table>
+
+      </div>
     </div>
+
   </div>
 
-</div>
-
-<div class="container py-5 text-mono">
-  <p>SnekWars presented by <a href="https://twitter.com/0xAHHC">@0xAHHC</a></p>
-</div>
+  <div class="container py-5 text-mono">
+    <p>SnekWars presented by <a href="https://twitter.com/0xAHHC">@0xAHHC</a></p>
+  </div>
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
   <script>
-    function updateStats(){
-      $.getJSON( "https://snekwars.antihackerhackerclub.com/event_stats/", function( data ) {
-    var items = [];
-    var stats = $("#event_stats")
-    $.each( data.data, function( key, val ) {
-      items.push( "<li class=\"list-group-item\">" + key + ": " + val + "</li>" );
-    });
-   
-    $( "<ul/>", {
-      "class": "list-group",
-      html: items.join( "" )
-    }).appendTo( stats );
-  });
-    }
+    function updateStats() {
+      $.getJSON("https://snekwars.antihackerhackerclub.com/event_stats/", function (data) {
+        var items = [];
+        var stats = $("#event_stats")
+        $.each(data.data, function (key, val) {
+          items.push("<li class=\"list-group-item\">" + key + ": " + val + "</li>");
+        });
 
-
-    function updateScoreboard(){
-      $.getJSON( "https://snekwars.antihackerhackerclub.com/scoreboard/json", function( data ) {
-    var items = [];
-    var scoreboard = $("#scoreboard")
-
-
-    $.each( data.data, function( key, val ) {
-      $.each( val, function( key, val ) {
-        if(key=="LastScore") {
-          items.push( "<td class=\"d-none d-sm-none d-md-none d-lg-table-cell\">" + val + "</td>" );
-        } else if (key=="Completed") {
-          items.push( "<td class=\"d-none d-sm-none d-md-table-cell\">" + val + "</td>" );
-        } else {
-          items.push( "<td>" + val + "</td>" );
-        }
+        $("<ul/>", {
+          "class": "list-group",
+          html: items.join("")
+        }).appendTo(stats);
       });
-    });
-   
-    $( "<tr/>", {
-      "class": "test",
-      html: items.join( "" )
-    }).appendTo( scoreboard );
-  });
     }
-  
+
+
+    function updateScoreboard() {
+      $.getJSON("https://snekwars.antihackerhackerclub.com/scoreboard/json", function (data) {
+        var items = [];
+        var scoreboard = $("#scoreboard")
+
+
+        $.each(data.data, function (key, val) {
+          $.each(val, function (key, val) {
+            if (key == "LastScore") {
+              items.push("<td class=\"d-none d-sm-none d-md-none d-lg-table-cell\">" + val + "</td>");
+            } else if (key == "Completed") {
+              items.push("<td class=\"d-none d-sm-none d-md-table-cell\">" + val + "</td>");
+            } else {
+              items.push("<td>" + val + "</td>");
+            }
+          });
+        });
+
+        $("<tr/>", {
+          "class": "test",
+          html: items.join("")
+        }).appendTo(scoreboard);
+      });
+    }
+
     updateStats()
     updateScoreboard()
   </script>
-  </body>
+</body>
+
 </html>
