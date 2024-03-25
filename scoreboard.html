@@ -130,11 +130,10 @@
 
     function updateScoreboard() {
       $.getJSON("https://snekwars.antihackerhackerclub.com/scoreboard/json", function (data) {
-        var items = [];
         var scoreboard = $("#scoreboard")
 
-
         $.each(data.data, function (key, val) {
+          var items = [];
           $.each(val, function (key, val) {
             if (key == "LastScore") {
               items.push("<td class=\"d-none d-sm-none d-md-none d-lg-table-cell\">" + val + "</td>");
@@ -144,12 +143,12 @@
               items.push("<td>" + val + "</td>");
             }
           });
+          $("<tr/>", {
+            "class": "test",
+            html: items.join("")
+          }).appendTo(scoreboard);
+          var items = [];
         });
-
-        $("<tr/>", {
-          "class": "test",
-          html: items.join("")
-        }).appendTo(scoreboard);
       });
     }
 
