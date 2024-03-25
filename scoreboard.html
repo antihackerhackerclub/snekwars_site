@@ -131,6 +131,7 @@
     function updateScoreboard() {
       $.getJSON("https://snekwars.antihackerhackerclub.com/scoreboard/json", function (data) {
         var scoreboard = $("#scoreboard")
+        scoreboard.html("")
 
         $.each(data.data, function (key, val) {
           var items = [];
@@ -154,6 +155,11 @@
 
     updateStats()
     updateScoreboard()
+
+    const interval = setInterval(function() {
+      updateScoreboard()
+    }, 5000);
+
   </script>
 </body>
 
