@@ -44,65 +44,133 @@
   </div>
 
 
-
   <div class="container py-5 mb5 text-mono">
     <h1 class="mb-5">instruction<span class="vim-caret">s</span></h1>
-
-    <div class="row">
-      <div class="col-xl-12">
-        <h3 class="text-mono">installation</h3>
-        <p>
-          To install the snekwars_client run the following commands:
-        </p>
-        <code>
-        <pre>
-$ git clone https://github.com/antihackerhackerclub/snekwars_client
-$ cd snekwars_client
-$ pip install .
-        </pre>
-      </code>
-
-        <h3 class="text-mono">registration</h3>
-        <p>
-          To use the client you must have two pieces of information provided by AHHC. You must have the <code>url</code>
-          of the SnekWars server and a <code>registration code</code> (found on Discord). With those two pieces of
-          information you can create your account as follows using a Python interpreter:<br>
-        </p>
-        <code>
-          <pre>
->>> import snekwars_client
->>> snekwars = snekwars_client.event("https://snekwars.antihackerhackerclub.com")
->>> snekwars.register_account("Email Address", "Your Display Name","Your Chosen Password", "<code class="badge-danger">registration code</code>")
->>> snekwars.login("Email Address","Your Chosen Password")
-        </pre>
-        </code>
-
-        <h3 class="text-mono">get challenges/data and submit solutions</h3>
-        <ol>
-          <li>
-            Login to Snekwars
+    <h3 class="text-mono">installation</h3>
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" id="macos-tab" data-toggle="tab" href="#macos" role="tab" aria-controls="macos"
+              aria-selected="true">macos</a>
           </li>
-          <code>>>> snekwars.login("Email Address","Your Chosen Password")</code>
-          <li>
-            Query for challenge 0:
+          <li class="nav-item">
+            <a class="nav-link" id="windows-tab" data-toggle="tab" href="#windows" role="tab" aria-controls="windows"
+              aria-selected="false">windows</a>
           </li>
-          <code>>>> snekwars.challenge(0)</code>
-          <li>
-            Get the data for challenge 0:
-          </li>
-          <code>>>> data = snekwars.data(0)</code>
-          <li>
-            Submit your solution for challenge 0:
-          </li>
-          <code>>>> snekwars.solve('1234')</code>
-        </ol>
-        <p>
-          You must submit your solution within 3 seconds of querying for data. The .solve() function automatically
-          submits your solution to the last .data(#) queried.
-        </p>
+        </ul>
+      </div>
+      <div class="card-body">
+        <div class="tab-content" id="instructionsTabContent">
+          <div class="tab-pane fade show active" id="macos" role="tabpanel" aria-labelledby="macos-tab">
+            <ol>
+              <li>
+                Download snekwars_client
+                <ul>
+                  <li>
+                    Use git: <code>git clone https://github.com/antihackerhackerclub/snekwars_client</code>
+                  </li>
+                  or
+                  <li>
+                    Download directly <a
+                      href='https://github.com/antihackerhackerclub/snekwars_client/archive/refs/heads/main.zip'>here</a>
+                    and unzip
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Open Terminal and navigate to the client
+                <ul>
+                  <li><code>cd ~/Downloads/snekwars_client/</code></li>
+                </ul>
+              </li>
+              <li>
+                Create Python virtual environment and activate it
+                <ul>
+                  <li><code>python3 -m venv .venv</code></li>
+                  <li><code>source .venv/bin/activate</code></li>
+                </ul>
+              </li>
+              <li>
+                Continue with registration
+              </li>
+            </ol>
+          </div>
+          <div class="tab-pane fade" id="windows" role="tabpanel" aria-labelledby="windows-tab">
+            <ol>
+              <li>
+                Download snekwars_client
+                <ul>
+                  <li>
+                    Download directly <a
+                      href='https://github.com/antihackerhackerclub/snekwars_client/archive/refs/heads/main.zip'>here</a>
+                    and unzip
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Open CMD and navigate to the client
+                <ul>
+                  <li><code>cd "C:\Users\%username%\Downloads\snekwars_client\"</code></li>
+                </ul>
+              </li>
+              <li>
+                Create Python virtual environment and activate it
+                <ul>
+                  <li><code>python3 -m venv .venv</code></li>
+                  <li><code>source .venv/bin/activate</code></li>
+                </ul>
+              </li>
+              <li>
+                Continue with registration
+              </li>
+            </ol>
+          </div>
+        </div>
       </div>
     </div>
+    <br><br>
 
+    <h3 class="text-mono">registration</h3>
+    <p>
+      To use the client you must have two pieces of information provided by AHHC. You must have the <code>url</code>
+      of the SnekWars server and a <code>registration code</code> (found on Discord). With those two pieces of
+      information you can create your account as follows using a Python interpreter:<br>
+    </p>
+    <code>
+      <pre>
+<code inert>>>> </code>import snekwars_client
+<code inert>>>> </code>snekwars = snekwars_client.event("https://snekwars.antihackerhackerclub.com")
+<code inert>>>> </code>snekwars.register_account("Email Address", "Your Display Name","Your Chosen Password", "<code class="badge-danger">registration code</code>")
+<code inert>>>> </code>snekwars.login("Email Address","Your Chosen Password")
+      </pre>
+    </code>
+
+    <h3 class="text-mono">get challenges/data and submit solutions</h3>
+    <ol>
+      <li>
+        Login to Snekwars
+      </li>
+      <code><code inert>>>> </code>snekwars.login("Email Address","Your Chosen Password")</code>
+      <li>
+        Query for challenge 0:
+      </li>
+      <code><code inert>>>> </code>snekwars.challenge(0)</code>
+      <li>
+        Get the data for challenge 0:
+      </li>
+      <code><code inert>>>> </code>data = snekwars.data(0)</code>
+      <li>
+        Submit your solution for challenge 0:
+      </li>
+      <code><code inert>>>> </code>snekwars.solve('1234')</code>
+    </ol>
+    <p>
+      You must submit your solution within 3 seconds of querying for data. The .solve() function automatically
+      submits your solution to the last .data(#) queried.
+    </p>
+  </div>
+  </div>
   </div>
 
   <div class="container py-5 text-mono">
