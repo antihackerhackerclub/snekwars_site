@@ -104,21 +104,24 @@
                   <li>
                     Download directly <a
                       href='https://github.com/antihackerhackerclub/snekwars_client/archive/refs/heads/main.zip'>here</a>
-                    and unzip
+                    and unzip to your Downloads folder
                   </li>
                 </ul>
               </li>
               <li>
                 Open CMD and navigate to the client
                 <ul>
-                  <li><code>cd "C:\Users\%username%\Downloads\snekwars_client-main\"</code></li>
+                  <li><code>cd "C:\Users\%username%\Downloads\snekwars_client-main\snekwars_client-main\"</code></li>
                 </ul>
               </li>
               <li>
-                Create Python virtual environment and activate it
+                Create Python virtual environment, activate it, and install the downloaded client (you may need to install Python3 first)
                 <ul>
                   <li><code>python3 -m venv .venv</code></li>
-                  <li><code>source .venv/bin/activate</code></li>
+                  <li><code>cd .venv/Scripts</code></li>
+                  <li><code>activate && cd ../../</code></li>
+                  <li><code>pip3 install .</code></li>
+                  <li><code>python</code></li>
                 </ul>
               </li>
               <li>
