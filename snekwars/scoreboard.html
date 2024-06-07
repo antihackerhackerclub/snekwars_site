@@ -3,11 +3,11 @@
 
 <head>
   <!-- 
-    ----- START 404 DEBUG -----
-    https://antihackerhackerclub.com/snekwars/debug
-    ----- END 404 DEBUG -----
-    
-    what is this??? do we need to remove it???
+  ----- START 404 DEBUG -----
+  https://antihackerhackerclub.com/snekwars/debug
+  ----- END 404 DEBUG -----
+  
+  what is this??? do we need to remove it???
   -->
 
   <!-- Required meta tags -->
@@ -126,12 +126,61 @@
   <script>
     function updateStats() {
       $("#stats_spinner").show();
-      $.getJSON("https://snekwars.antihackerhackerclub.com/event_stats/", function (data) {
+      // $.getJSON("https://snekwars.antihackerhackerclub.com/event_stats/", function (data) {
+      $.getJSON("http://localhost:8000/event_stats/", function (data) {
         var items = [];
         var stats = $("#event_stats")
+        items.push("<li id=\"countdown\" class=\"list-group-item\"></li>");
         $.each(data.data, function (key, val) {
-          items.push("<li class=\"list-group-item\">" + key + ": " + val + "</li>");
+          if ( key != 'Event Active' ) {
+            items.push("<li class=\"list-group-item\">" + key + ": " + val + "</li>");
+          }
         });
+
+        // function CountDownTimer(dt, id, preface, st, et)
+        function CountDownTimer(eventStartTime, eventEndTime)
+        {
+          var id = 'countdown'
+
+          var _second = 1000;
+          var _minute = _second * 60;
+          var _hour = _minute * 60;
+          var _day = _hour * 24;
+          var timer; var preface;
+
+
+          function showRemaining() {
+              var now = new Date();
+              var distance = eventEndTime - now;
+
+              //  Do some logics to see if the event has started yet
+              if ( now > eventStartTime && now < eventEndTime ) { distance = eventEndTime - now; preface = 'Events ends in: ' }
+              else if ( now < eventStartTime ) { distance = eventStartTime - now; preface = 'Event starts in: ' }
+
+              if ( distance < 0 && now > eventEndTime ) {
+                // console.log('event has ended...stop timer')
+                clearInterval(timer);
+                document.getElementById(id).innerHTML = 'Event Over!';
+                return;
+              } 
+
+              var days = Math.floor(distance / _day);
+              var hours = Math.floor((distance % _day) / _hour);
+              var minutes = Math.floor((distance % _hour) / _minute);
+              var seconds = Math.floor((distance % _minute) / _second);
+
+              document.getElementById(id).innerHTML = preface
+              if ( days ) { document.getElementById(id).innerHTML += days + 'days '; }
+              if ( hours ) { document.getElementById(id).innerHTML += hours + 'hrs '; }
+              if ( minutes ) { document.getElementById(id).innerHTML += minutes + 'mins '; }
+              document.getElementById(id).innerHTML += seconds + 'secs';
+          }
+          timer = setInterval(showRemaining, 1000);
+        }
+
+        eventStartTime = new Date(data['data']['Event Start Time'])
+        eventEndTime = new Date(data['data']['Event End Time'])
+        CountDownTimer(eventStartTime, eventEndTime)
 
         $("<ul/>", {
           "class": "list-group",
