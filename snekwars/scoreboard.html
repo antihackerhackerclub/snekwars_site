@@ -131,7 +131,7 @@
         var stats = $("#event_stats")
         items.push("<li id=\"countdown\" class=\"list-group-item\"></li>");
         $.each(data.data, function (key, val) {
-          if ( key != 'Event Active' ) {
+          if ( key != 'Event Active' && key != 'Scoreboard Enabled' ) {
             items.push("<li class=\"list-group-item\">" + key + ": " + val + "</li>");
           }
         });
